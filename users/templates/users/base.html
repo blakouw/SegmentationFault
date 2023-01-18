@@ -13,11 +13,11 @@
 
     <title>{% block title %} {% endblock %} </title>
 </head>
-<body>
-  <div class="container p-3 my-3">
+<body style="background:#A71930;">
+  <div class="container p-3 my-3" >
     <div class="row">
       <div class="col-md-12">
-        <nav class="navbar navbar-expand-md navbar-light " style="background-color: #39dcdc">
+        <nav class="navbar navbar-expand-md navbar-light " style="background-color: #00693C">
           <a href="/" class="navbar-brand">Home</a>
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -25,10 +25,10 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ml-auto">
                   {% if user.is_authenticated %}
-                    <a href="{% url 'users-profile' %}" class="nav-item nav-link">Profil</a>
-                    <a href="{% url 'logout' %}" class="nav-item nav-link">Wyloguj</a>
+                    <a href="{% url 'users-profile' %}" class="navbar-brand">Profil</a>
+                    <a href="{% url 'logout' %}" class="navbar-brand">Wyloguj</a>
                   {% else %}
-                    <a href="{% url 'login' %}" class="nav-item nav-link">Zaloguj</a>
+                    <a href="{% url 'login' %}" class="navbar-brand">Zaloguj</a>
                   {% endif %}
 
                 </div>
