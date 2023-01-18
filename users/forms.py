@@ -54,7 +54,7 @@ class LoginForm(AuthenticationForm):
                                                              }))
     password = forms.CharField(max_length=50,
                                required=True,
-                               widget=forms.PasswordInput(attrs={'placeholder': 'Haslo',
+                               widget=forms.PasswordInput(attrs={'placeholder': ' Haslo ',
                                                                  'class': 'form-control',
                                                                  'data-toggle': 'password',
                                                                  'id': 'password',
