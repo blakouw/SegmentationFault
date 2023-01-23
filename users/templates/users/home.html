@@ -3,15 +3,15 @@
 {% block content %}
 
     <div class="jumbotron"  style = "background: linear-gradient(#00693C, #1E1E1E,#A71930);" >
-        <h1 class="display-2">Witaj {{user.first_name.title|default:'nieznajomy'}}!</h1>
-        <p class="lead">
+        <h1 class="display-2" style="color:azure" >Witaj {{user.first_name.title|default:'nieznajomy'}}!</h1>
+        <p class="lead" style="color:azure">
             Oto nasz projekt.
         </p>
-        <p class="lead">
+        <p class="lead" style="color:azure">
             <b>Kamil Starobrat i Jakub Sowa</b>
         </p>
         <hr class="my-4">
-        <p class="lead">
+        <p class="lead" style="color:azure">
             {% if user.is_authenticated %}
                 <a class="btn btn-primary btn-lg" href="{% url 'logout' %}" role="button">Wyloguj się</a>
             {% else %}
