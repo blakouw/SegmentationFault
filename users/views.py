@@ -32,7 +32,7 @@ class RegisterView(View):
             form.save()
 
             username = form.cleaned_data.get('username')
-            messages.success(request, f'Account created for {username}')
+            messages.success(request, f'Stworzono konto dla: {username}')
 
             return redirect(to='login')
 
@@ -56,16 +56,13 @@ class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
     template_name = 'users/password_reset.html'
     email_template_name = 'users/password_reset_email.html'
     subject_template_name = 'users/password_reset_subject'
-    success_message = "We've emailed you instructions for setting your password, " \
-                      "if an account exists with the email you entered. You should receive them shortly." \
-                      " If you don't receive an email, " \
-                      "please make sure you've entered the address you registered with, and check your spam folder."
+    success_message = "elo"
     success_url = reverse_lazy('users-home')
 
 
 class ChangePasswordView(SuccessMessageMixin, PasswordChangeView):
     template_name = 'users/change_password.html'
-    success_message = "Successfully Changed Your Password"
+    success_message = "Zmieniono hasło"
     success_url = reverse_lazy('users-home')
 
 
@@ -78,7 +75,7 @@ def profile(request):
         if user_form.is_valid() and profile_form.is_valid():
             user_form.save()
             profile_form.save()
-            messages.success(request, 'Your profile is updated successfully')
+            messages.success(request, 'Profil został zaktualizowany')
             return redirect(to='users-profile')
     else:
         user_form = UpdateUserForm(instance=request.user)
