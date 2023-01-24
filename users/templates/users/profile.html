@@ -2,7 +2,8 @@
 {% block title %}Profile Page{% endblock title %}
 {% block content %}
     <div class="row my-3 p-3">
-        <img class="rounded-circle account-img" src="{{ user.profile.avatar.url }} " style="cursor: pointer;"/>
+        <img class="rounded-circle account-img" src="{{ user.profile.avatar.url }} " style="cursor: pointer"width="200" height="200;" 
+        border="5" />
     </div>
     {% if user_form.errors %}
         <div class="alert alert-danger alert-dismissible" role="alert">
@@ -20,20 +21,20 @@
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-row">
-                <div class="col-md-5">
+                <div class="col-md-8">
                     <div class="form-group">
-                        <label class="small mb-1">Login:</label>
+                        <label class="small mb-1" style="color: azure;">Login:</label>
                             {{ user_form.username }}
-                        <label class="small mb-1">Email:</label>
+                        <label class="small mb-1" style="color: azure;">Email:</label>
                             {{ user_form.email }}
                     </div>
                     <div class="form-group">
                         <a href="{% url 'password_change' %}">Zmień hasło</a>
                         <hr>
-                        <label class="small mb-1">Zmień profilowe:</label>
+                        <label class="small mb-1" style="color: azure;">Zmień profilowe:</label>
                         {{ profile_form.avatar }}
                     </div>
-                    <label class="small mb-1">Lista TODO:</label> {{ profile_form.bio }}
+                    <label class="small mb-1" style="color: azure;">Lista TODO:</label> {{ profile_form.bio }}
                 </div>
             </div>
             <br><br>
